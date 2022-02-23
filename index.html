@@ -27,7 +27,7 @@ function dateDiffInDays(a, b) {
 
 document.getElementById('ttoday').innerHTML = L[dateDiffInDays(start_date, today)]
 var tomorrow = new Date()
-tomorrow.setTime(tomorrow.getTime()+86400000)
+tomorrow.setTime(tomorrow.getTime()+86400000+86400000)
 document.getElementById('ttomorrow').innerHTML = L[dateDiffInDays(start_date, tomorrow)]
 n = dateDiffInDays(start_date, today)
 for (let step = 0; step < n; step++) {
