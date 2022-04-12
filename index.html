@@ -1,9 +1,10 @@
-Wordle Answers:
-<br/>
-Today: <span id="ttoday"></span>
-<br/>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body>Wordle Answers:
+<br>
+Today: <span id="ttoday">royal</span>
+<br>
 Tomorrow: <span id="ttomorrow"></span>
-<br/>
+<br>
 <ul id="demo"></ul>
 
 <script>
@@ -2344,27 +2345,25 @@ function getWordOfTheDay(today) {
 // e.today
 var today = new Date();
 today.setDate(today.getDate())
-console.log(getWordOfTheDay(today))
-
-
+var tomorrow = new Date()
+tomorrow.setTime(tomorrow.getTime()+86400000)
 
 
 
 
 //var start_date = new Date("2021-06-20")
 document.getElementById('ttoday').innerHTML = getWordOfTheDay(today)
-//var tomorrow = new Date()
-//tomorrow.setTime(tomorrow.getTime()+86400000+86400000)
-//document.getElementById('ttomorrow').innerHTML = L[dateDiffInDays(start_date, tomorrow)]
-/*n = dateDiffInDays(start_date, today)
+document.getElementById('ttomorrow').innerHTML = wordlist[getDateDifference(baseDate, tomorrow)]
+n = getDateDifference(baseDate, today)
 for (let step = 0; step < n; step++) {
   // Runs 5 times, with values of step 0 through 4.
   console.log(step);
   console.log();
   var node=document.createElement("LI");
-  var textnode=document.createTextNode(today.toLocaleDateString()+" "+L[dateDiffInDays(start_date, today)]);
+  var textnode=document.createTextNode(today.toLocaleDateString()+" "+wordlist[getDateDifference(baseDate, today)]);
   node.appendChild(textnode);
   today.setTime(today.getTime()-86400000);
   document.getElementById("demo").appendChild(node);
-} */
+} 
 </script>
+</body></html>
